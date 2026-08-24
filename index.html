@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BARB'S SHAWARMA AND GRILLS | Order Fresh</title>
+<meta name="description" content="Order fresh shawarma, suya, barbecue, turkey, chicken and chips, spaghetti and more from BARB'S SHAWARMA AND GRILLS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="announcement">🔥 Fresh off the grill • Order online • Pay on delivery available</div>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <span class="logo-mark">B</span>
+      <span><strong>BARB'S</strong><small>SHAWARMA & GRILLS</small></span>
+    </a>
+    <nav>
+      <a href="#menu">Menu</a><a href="#how">How it works</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-pill" onclick="openCart()">🛒 <span>Cart</span><b id="cartCount">0</b></button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="rating">★★★★★ <span>Fresh, hot & made to order</span></div>
+    <h1>Good food.<br><em>Good mood.</em></h1>
+    <p>Hot shawarma, juicy grills and satisfying meals made fresh at BARB'S.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#menu">Order now <span>→</span></a>
+      <a class="btn btn-light" href="https://wa.me/2348071357711" target="_blank">WhatsApp us</a>
+    </div>
+    <div class="trust-row"><span>✓ Pay on delivery</span><span>✓ Pickup available</span><span>✓ Freshly prepared</span></div>
+  </div>
+</section>
+
+<section class="quick-order">
+  <div><span class="quick-icon">🌯</span><div><b>Craving shawarma?</b><small>Get your order started in seconds.</small></div></div>
+  <a href="#menu">Browse menu <span>→</span></a>
+</section>
+
+<section id="menu" class="section">
+  <div class="section-title">
+    <div><span class="kicker">OUR MENU</span><h2>What are you having?</h2><p>Pick your favorite and add it to your cart.</p></div>
+    <div class="search"><span>⌕</span><input id="search" oninput="renderMenu()" placeholder="Search food..."></div>
+  </div>
+  <div id="tabs" class="tabs"></div>
+  <div id="menuGrid" class="menu-grid"></div>
+</section>
+
+<section class="promo">
+  <div><span class="kicker">BARB'S SPECIAL</span><h2>Made hot. Packed right.<br>Delivered with love.</h2><p>Perfect for lunch, evening cravings, hangouts and family orders.</p></div>
+  <a class="btn btn-primary" href="#menu">See the menu →</a>
+</section>
+
+<section id="how" class="section how">
+  <div class="center-title"><span class="kicker">SIMPLE ORDERING</span><h2>From our grill to you</h2></div>
+  <div class="steps">
+    <div><span>01</span><h3>Choose your food</h3><p>Browse the menu and add what you want.</p></div>
+    <div><span>02</span><h3>Tell us where</h3><p>Enter your phone number and delivery address.</p></div>
+    <div><span>03</span><h3>Choose payment</h3><p>Pay online or choose pay on delivery.</p></div>
+    <div><span>04</span><h3>Enjoy your meal</h3><p>We prepare it fresh and get it to you.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div><span class="kicker">NEED HELP?</span><h2>Talk to BARB'S</h2><p>Questions about your order? We're one WhatsApp message away.</p></div>
+  <div class="contact-actions"><a class="btn btn-primary" href="https://wa.me/2348071357711" target="_blank">💬 WhatsApp</a><a class="phone-link" href="tel:+2348071357711">+234 807 135 7711</a></div>
+</section>
+</main>
+
+<footer><div><b>BARB'S SHAWARMA AND GRILLS</b><span>Fresh shawarma & grilled goodness.</span></div><div class="footer-links"><a href="#menu">Menu</a><a href="admin.html">Admin</a></div><small>© <span id="year"></span> BARB'S</small></footer>
+
+<a class="float-wa" href="https://wa.me/2348071357711" target="_blank">☏<span>Order on WhatsApp</span></a>
+
+<div id="cartModal" class="modal hidden">
+ <div class="cart-sheet">
+  <div class="sheet-head"><div><span class="kicker">YOUR ORDER</span><h2>Cart</h2></div><button class="close" onclick="closeCart()">×</button></div>
+  <div id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="total-row"><span>Subtotal</span><b id="cartTotal">₦0</b></div>
+    <div class="small-note">Delivery fee, if applicable, will be confirmed with your order.</div>
+    <form id="checkoutForm">
+      <input id="customerName" required placeholder="Full name">
+      <input id="customerPhone" required placeholder="Phone number">
+      <div class="two"><select id="orderType"><option value="delivery">🛵 Delivery</option><option value="pickup">🏪 Pickup</option></select><select id="paymentMethod"><option value="cod">💵 Pay on delivery</option><option value="online">💳 Pay online</option></select></div>
+      <textarea id="address" placeholder="Delivery address"></textarea>
+      <button class="btn btn-primary full" type="submit">Place order <span>→</span></button>
+    </form>
+    <p class="small-note">Your order details will also be sent to BARB'S on WhatsApp.</p>
+  </div>
+ </div>
+</div>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
