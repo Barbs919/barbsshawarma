@@ -15,8 +15,8 @@ function login(){
   showDashboard();
 }
 function showDashboard(){
-  document.getElementById("login").classList.add("hidden");
-  document.getElementById("dash").classList.remove("hidden");
+  document.getElementById("login").classList.add("open");
+  document.getElementById("dash").classList.remove("open");
   data=data||{phone:"2348071357711",paystackPublicKey:"",menu:[]};
   document.getElementById("phone").value=data.phone;
   document.getElementById("pk").value=data.paystackPublicKey||"";
